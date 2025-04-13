@@ -1,0 +1,41 @@
+Next Challenge: Multi-API Merge + Error Tolerance
+
+Prompt:
+
+You’re building a lightweight "developer insights dashboard" that aggregates GitHub repo data.
+
+Your goal:
+
+Make a program that takes in a list of GitHub repository full names, then:
+
+Makes an HTTP request to get repo metadata for each one from GitHub’s API.
+Extracts and prints the following:
+full_name
+stargazers_count
+forks_count
+open_issues_count
+Sorts them by number of stars, descending.
+Gracefully skips repos that are invalid or trigger a 404 (print a warning and move on).
+🌐 API Info:
+For any GitHub repo:
+
+GET https://api.github.com/repos/{owner}/{repo}
+📘 Example:
+
+https://api.github.com/repos/pallets/flask
+💡 Input:
+Use a hardcoded list to start:
+
+repos = [
+    "pallets/flask",
+    "django/django",
+    "fake/repo-that-does-not-exist",
+    "numpy/numpy",
+    "psf/requests"
+]
+❗Rules:
+Use requests
+Print each repo's stats like this:
+flask: ⭐ 62000 | 🍴 16000 | 🐛 50 issues
+Sort the valid ones by stars.
+Don't crash on invalid repos.

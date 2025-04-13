@@ -1,0 +1,25 @@
+Scenario-Based Challenge 1: Real-Time API Processing
+
+Prompt:
+
+You’re working on a system that monitors cryptocurrency prices for a trading dashboard.
+
+Use this public API:
+
+https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd
+🧪 Task:
+Make a GET request to the above API and fetch all coins.
+From the results, extract only the following fields for each coin:
+id
+symbol
+name
+current_price
+price_change_percentage_24h
+Print the top 5 coins with the highest 24h percentage gain (descending).
+❗Constraints:
+Gracefully handle the case where some coins have None or missing price_change_percentage_24h.
+Sort using Python.
+Print cleanly like:
+1. ethereum (ETH): $3,488.24 (+4.31%)
+2. dogecoin (DOGE): $0.1834 (+3.91%)
+...

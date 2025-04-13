@@ -1,0 +1,17 @@
+Prompt: Analyze SpaceX Launch Data
+
+Question:
+
+You’re given JSON data from the SpaceX Launches API ("https://api.spacexdata.com/v4/launches"). 
+Each object in the list represents a single launch and includes nested information such as launch success, payloads, rocket used, failure reasons, and links to media.
+
+Write a Python script that:
+
+Fetches all launches from the SpaceX API.
+Filters the launches that failed.
+For each failed launch, prints:
+🚀 Launch name
+📅 Date of launch
+❌ Reason for failure (if any)
+🔗 A link to the launch’s article or webcast (if available)
+Finally, output the total number of failed launches.
