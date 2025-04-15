@@ -67,7 +67,7 @@ def sync_users(crm_data, billing_users):
     print(f'Created {new_bill} new billing users \n Updated {update_email} emails \n "Deleted {delete_ghost} ghost billing users')
 
 
-
+# literally didn't do anything w this or more cuz the apis are fake btw
 if __name__ == "__main__":
     fetch_crm_users()
     fetch_billing_users()
