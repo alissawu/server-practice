@@ -1,0 +1,39 @@
+Note: Generated with Claude, significantly harder than the other ones, also uses async stuff
+
+Sample Interview Problem: Real-time Weather Analytics Pipeline
+Problem Statement
+You're building a data pipeline for [redacted]'s cloud cost monitoring system. In this exercise, you'll create a Python program that:
+
+Fetches weather data from multiple global data centers
+Processes and analyzes this data
+Generates insights about potential cost impacts
+Handles error cases gracefully
+
+Requirements
+
+Use the OpenWeatherMap API (or similar weather API) to fetch current weather data for 5 different global locations where cloud data centers might be located
+Process the data to extract:
+
+Temperature
+Humidity
+Wind speed
+Weather conditions
+
+
+Analyze the data to:
+
+Identify locations experiencing extreme conditions
+Calculate cooling costs based on temperature
+Estimate risk factors for each location
+
+
+Implement proper error handling and retry logic
+Create a summary report of your findings
+
+Additional Challenges
+
+Implement rate limiting for API requests
+Add data validation to ensure the API responses are as expected
+Use asyncio to make concurrent API requests efficiently
+Implement caching to reduce API calls for repeated requests
+Unit test your code with mocked API responses

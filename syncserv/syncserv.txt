@@ -1,0 +1,69 @@
+🔥 [redacted]-STYLE INTERVIEW CHALLENGE: “Subscription Sync Tool”
+
+🧩 Background:
+You're building a CLI tool for a startup to sync subscriber data between two services:
+
+📥 MockCRM – where users sign up
+📤 MockBilling – where users are billed monthly
+Your job is to:
+
+Compare both systems and sync users by making appropriate HTTP calls to fix inconsistencies.
+⚙️ APIs Involved (All mock)
+
+MockCRM API
+Base URL: https://jsonplaceholder.typicode.com/users
+This returns 10 fake user objects like:
+
+{
+  "id": 1,
+  "name": "Leanne Graham",
+  "email": "Sincere@april.biz"
+}
+MockBilling API (Custom simulation)
+You're told this mock endpoint exists:
+
+GET    https://api.mockbilling.com/customers
+GET    https://api.mockbilling.com/customers/{id}
+POST   https://api.mockbilling.com/customers
+PATCH  https://api.mockbilling.com/customers/{id}
+DELETE https://api.mockbilling.com/customers/{id}
+✅ Use a fake Bearer token for billing API:
+
+headers = {"Authorization": "Bearer faketoken123"}
+🔧 Your Task
+
+Implement a Python script that:
+
+Step 1: Fetch CRM Users
+GET the list of users from https://jsonplaceholder.typicode.com/users
+Step 2: Fetch Billing Users
+GET all billing users from https://api.mockbilling.com/customers
+Assume paginated: You’ll need to follow the "next" link in response headers
+Step 3: Sync Users
+For each CRM user:
+If they don’t exist in billing → POST them
+If they exist but have a mismatched email → PATCH to fix email
+For each billing user not in CRM → DELETE them
+💣 Complications
+
+Handle rate limits: Retry if 429 Too Many Requests (use Retry-After header if present)
+Handle 404 or 500 from billing API — log and continue
+Normalize emails to lowercase for comparisons
+Time-limit the sync to under 60 seconds — log if you're approaching timeout
+Structure your code into:
+get_crm_users()
+get_billing_users()
+sync_users(crm, billing)
+Helpers for create_user, update_user, delete_user
+🧪 Output
+
+✅ Created 3 new billing users
+♻️ Updated 2 emails
+🗑️ Deleted 1 ghost billing user
+🧠 Bonus (If You Fly Through)
+
+Add CLI support:
+
+python sync.py --dry-run --timeout=60
+--dry-run: Just print what actions would happen
+--timeout: Stop processing at the time limit
