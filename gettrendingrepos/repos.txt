@@ -1,0 +1,60 @@
+💥 Ultimate [Redacted]-Style Interview Challenge
+
+🚦 Prompt:
+
+"Build a dashboard that tracks and analyzes trending GitHub repositories in a given programming language."
+
+🧩 Requirements:
+
+Your script should:
+
+Accept a programming language string (e.g., "python", "go", "rust")
+Query the GitHub Search API to find the top 50 trending repos written in that language
+Use this endpoint:
+https://api.github.com/search/repositories?q=language:{LANGUAGE}&sort=stars&order=desc&per_page=50
+For each repo returned, collect:
+full_name
+stargazers_count
+forks_count
+open_issues_count
+created_at
+owner.login (repo owner's username)
+Compute:
+Average stars
+Total forks
+The percentage of repos that have more than 100 open issues
+Print the top 5 repos by forks, nicely formatted
+Optionally: export the data to repos.csv or repos.json
+🧪 Constraints:
+
+Handle rate limits or errors (print friendly error if 403 or 404)
+Skip repos with missing or malformed data
+Assume the user may input an invalid language — handle it gracefully
+Use requests and only standard library
+🧵 Example Output (Python input):
+
+Language: python
+Top 5 Repositories by Forks:
+1. TheAlgorithms/Python: ⭐ 170000 | 🍴 42000 | 🐛 2000 issues | Created: 2017-06-14 | Owner: TheAlgorithms
+2. django/django: ⭐ 85000 | 🍴 36000 | 🐛 300 issues | Created: 2005-07-21 | Owner: django
+...
+
+Aggregate Stats:
+⭐ Average stars: 45,210
+🍴 Total forks: 215,400
+🐛 Repos with >100 issues: 12/50 (24%)
+✍️ Bonus (Stretch)
+
+Add a CLI interface with argparse so the user can do:
+python dashboard.py --lang python --format json
+Add a flag like --min-stars 1000 to filter results
+Use datetime to show how many days old each repo is
+🧠 What [Redacted] Is Looking For:
+
+Clear reasoning and structure
+Comfort with REST APIs and nested JSON
+Ability to write reusable code (split into functions?)
+Thinking like a collaborator:
+“Let’s write a function to normalize the repo data first”
+“We should probably handle if some repos don’t have that field”
+Bonus: clean formatting and helpful error messages

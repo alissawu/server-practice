@@ -1,0 +1,26 @@
+[
+  {
+    "full_name": "pallets/flask",
+    "stargazers_count": 69297,
+    "forks_count": 16362,
+    "open_issues_count": 4
+  },
+  {
+    "full_name": "django/django",
+    "stargazers_count": 83143,
+    "forks_count": 32476,
+    "open_issues_count": 322
+  },
+  {
+    "full_name": "numpy/numpy",
+    "stargazers_count": 29286,
+    "forks_count": 10696,
+    "open_issues_count": 2256
+  },
+  {
+    "full_name": "psf/requests",
+    "stargazers_count": 52723,
+    "forks_count": 9428,
+    "open_issues_count": 280
+  }
+]
