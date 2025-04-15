@@ -1,6 +1,5 @@
 import pandas as pd
 
-
 # Print first 3 rows
 df = pd.read_csv("students.csv")
 print(df[:3]) # can also do df.head(3)?
