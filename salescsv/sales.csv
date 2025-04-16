@@ -1,0 +1,7 @@
+order_id,rep,region,amount
+101,Alice,West,1200
+102,Bob,East,800
+103,Charlie,West,950
+104,Bob,East,1300
+105,Alice,West,700
+106,Daisy,South,1100
